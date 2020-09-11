@@ -1,0 +1,110 @@
+Software of Pathway Generator for the UV/Free Chlorine process
+***************************************************************
+Copyright by Professor John C.Crittenden's research group
+Brook Byers Institute for Sustainable Systems
+Department of Civil and Environmental Engineering
+Georgia Institute of Technology
+****************************************************************
+
+Below is the species list
+1. C(HHHH)
+2. O*(H)
+3. O(//O)
+4. Cl*
+5. O*(Cl)
+6. Cl-*(Cl)
+7. C*(HHH)
+8. O(HH)
+9. Cl(H)
+10. O(ClH)
+11. Cl-
+12. O*(O(C(HHH)))
+13. O*(C(HHH))
+14. C(//OHH)
+15. H2O2
+16. O(HC(HHH))
+17. C*(O(H)HH)
+18. C(//OHO(H))
+19. *COO-
+20. C(//O//O)
+21. HO2*
+22. O*(O(C(O(H)HH)))
+23. OH-
+24. O-*
+25. ClOH-*
+26. H+
+27. Cl(Cl)
+28. HClOH
+29. Cl2O2
+30. ClO2-
+31. ClO2*
+32. ClO3-
+The following is the reactino list
+1. C(HHHH) + O*(H) = C*(HHH) + O(HH) [HA]
+2. C(HHHH) + Cl* = C*(HHH) + Cl(H) [HA]
+3. C(HHHH) + O*(Cl) = C*(HHH) + O(ClH) [HA]
+4. C(HHHH) + Cl-*(Cl) = C*(HHH) + Cl- + Cl(H) [HA]
+5. C*(HHH) + O(//O) = O*(O(C(HHH))) [OA]
+6. 2*O*(O(C(HHH))) = O*(C(HHH)) *2 + O2 [PB3]
+7. 2*O*(O(C(HHH))) = C(//OHH) *2 + H2O2 [PB2]
+8. 2*O*(O(C(HHH))) = C(//OHH) + O(HC(HHH)) + O2 [PB1]
+9. O*(C(HHH)) = C*(O(H)HH) [OT]
+10. C(//OHO(H)) + O*H = *COO- + H+ + H2O [S]
+11. *COO- + O2 + H+ = CO2 + HO2* [S]
+12. *COO- + H2O2 = CO2 + H2O + HO* [S]
+13. C(//OHH) + H2O = C(//OHO(H)) [HC]
+14. O(HC(HHH)) + O*(H) = O*(C(HHH)) + O(HH) [HA]
+15. O(HC(HHH)) + O*(H) = C*(O(H)HH) + O(HH) [HA]
+16. O(HC(HHH)) + C*(HHH) = O*(C(HHH)) + C(HHHH) [HA]
+17. O(HC(HHH)) + C*(HHH) = C*(O(H)HH) + C(HHHH) [HA]
+18. O(HC(HHH)) + Cl* = O*(C(HHH)) + Cl(H) [HA]
+19. O(HC(HHH)) + Cl* = C*(O(H)HH) + Cl(H) [HA]
+20. O(HC(HHH)) + O*(Cl) = O*(C(HHH)) + O(ClH) [HA]
+21. O(HC(HHH)) + O*(Cl) = C*(O(H)HH) + O(ClH) [HA]
+22. O(HC(HHH)) + Cl-*(Cl) = O*(C(HHH)) + Cl- + Cl(H) [HA]
+23. O(HC(HHH)) + Cl-*(Cl) = C*(O(H)HH) + Cl- + Cl(H) [HA]
+24. C*(O(H)HH) + O(//O) = O*(O(C(O(H)HH))) [OA]
+25. O*(O(C(O(H)HH))) = C(//OHH)+ *OOH [PH]
+26. O*(H) + OH- = O-* + H2O [S]
+27. O-* + H2O = O*(H) + OH- [S]
+28. O*(H) + O(ClH) = O*(Cl) + H2O [S]
+29. O*(H) + O*(H) = H2O2 [S]
+30. H2O2 + O*(H) = HO2* + H2O [S]
+31. O*(H) + HO2* = O(//O) + H2O [S]
+32. H2O2 + HO2* = O*(H) + O(//O) + H2O [S]
+33. HO2* + HO2* = H2O2 + O(//O) [S]
+34. Cl* + H2O = ClOH-* + H+ [S]
+35. ClOH-* + H+ = Cl* + H2O [S]
+36. ClOH-* = O*(H) + Cl- [S]
+37. O*(H) + Cl- = ClOH-* [S]
+38. ClOH-* + Cl- = Cl-*(Cl) + OH- [S]
+39. Cl* + Cl- = Cl-*(Cl) [S]
+40. Cl-*(Cl) = Cl* + Cl- [S]
+41. Cl* + Cl* = Cl(Cl) [S]
+42. Cl(Cl) + OH- = O(ClH) + Cl- [S]
+43. Cl-*(Cl) + Cl-*(Cl) = Cl(Cl) + 2Cl- [S]
+44. Cl* + Cl-*(Cl) = Cl(Cl) + Cl- [S]
+45. Cl-*(Cl) + H2O2 = HO2* + 2Cl- + H+ [S]
+46. Cl-*(Cl) + HO2* = O(//O) + 2Cl- + H+ [S]
+47. Cl-*(Cl) + H2O = HClOH + Cl- [S]
+48. Cl-*(Cl) + OH- = ClOH-* + Cl- [S]
+49. HClOH = ClOH-* + H+ [S]
+50. HClOH = Cl* + H2O [S]
+51. HClOH + Cl- = Cl-*(Cl) + H2O [S]
+52. Cl* + H2O2 = HO2* + Cl- + H+ [S]
+53. Cl-*(Cl) + O*(H) = O(ClH) + Cl- [S]
+54. Cl(Cl) + H2O = O(ClH) + Cl- + H+ [S]
+55. Cl(Cl) + HO2* = Cl-*(Cl) + O(//O) + H+ [S]
+56. O(ClH) + HO2* = Cl* + O(//O) + H2O [S]
+57. Cl* + O(ClH) = O*(Cl) + Cl- + H+ [S]
+58. Cl* + OH- = ClOH-* [S]
+59. O*(Cl) + O*(Cl) = Cl2O2 [S]
+60. Cl2O2 + H2O = O(ClH) + ClO2- + H+ [S]
+61. O*(Cl) + O*(H) = ClO2- + H+ [S]
+62. ClO2- + O*(H) = ClO2* + OH- [S]
+63. ClO2* + O*(H) = ClO3- + H+ [S]
+64. ClO2- + Cl-*(Cl) = ClO2* + 2Cl- [S]
+65. ClO2- + O*(Cl) + H+ = ClO2* + O(ClH) [S]
+Total number of reactions is: 65
+Total number of species is: 32
+Running time of Pathway Generator: 1.119seconds

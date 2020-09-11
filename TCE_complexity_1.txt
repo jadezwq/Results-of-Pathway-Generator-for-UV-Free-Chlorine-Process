@@ -1,0 +1,430 @@
+Software of Pathway Generator for the UV/Free Chlorine process
+***************************************************************
+Copyright by Professor John C.Crittenden's research group
+Brook Byers Institute for Sustainable Systems
+Department of Civil and Environmental Engineering
+Georgia Institute of Technology
+****************************************************************
+
+Below is the species list
+1. C(ClCl//C(ClH))
+2. O*(H)
+3. O(//O)
+4. Cl*
+5. O*(Cl)
+6. Cl-*(Cl)
+7. C*(C(ClO(H)H)ClCl)
+8. C*(C(ClClH)ClCl)
+9. C*(C(O(Cl)ClH)ClCl)
+10. Cl-
+11. C*(ClClC(//OH))
+12. O*(O(C(C(ClClH)ClCl)))
+13. O*(O(C(C(O(Cl)ClH)ClCl)))
+14. O*(O(C(ClClC(//OH))))
+15. O*(C(C(ClClH)ClCl))
+16. O*(C(C(O(Cl)ClH)ClCl))
+17. O*(C(ClClC(//OH)))
+18. C(ClCl//O)
+19. C(//O//O)
+20. C*(ClClH)
+21. C(ClClHC(Cl//O))
+22. C*(O(Cl)ClH)
+23. C(C(Cl//O)O(Cl)ClH)
+24. C(Cl//OC(//OH))
+25. C*(//OH)
+26. C(ClClClH)
+27. O*(O(C(ClClH)))
+28. C(C(ClClH)O(H)//O)
+29. O*(O(C(O(Cl)ClH)))
+30. C(O(Cl)ClHC(O(H)//O))
+31. C(C(//OH)O(H)//O)
+32. C(//OHO(H))
+33. H2O2
+34. *COO-
+35. HO2*
+36. C*(O(H)O(H)H)
+37. C*(ClClCl)
+38. O(HH)
+39. C(ClClHC(ClClH))
+40. C(C(ClClH)O(Cl)ClH)
+41. C(ClClHC(//OH))
+42. C(ClClHH)
+43. O(ClC(ClHH))
+44. Cl(H)
+45. O(ClH)
+46. O*(C(ClClH))
+47. C(ClClHO(H))
+48. C*(C(O(H)//O)ClCl)
+49. O*(C(C(ClClH)//O))
+50. O*(C(O(Cl)ClH))
+51. C(Cl//OO(Cl))
+52. C(O(Cl)ClO(H)H)
+53. C*(O(Cl)C(O(H)//O)Cl)
+54. O*(C(C(O(Cl)ClH)//O))
+55. C(O(H)//OC(O(H)//O))
+56. O*(O(C(O(H)O(H)H)))
+57. O*(O(C(ClClCl)))
+58. C(O(H)O(H)HH)
+59. C*(C(ClClH)O(Cl)Cl)
+60. C*(ClClO(H))
+61. C(Cl//OH)
+62. CO
+63. O*(O(C(C(O(H)//O)ClCl)))
+64. C*(O(Cl)ClO(H))
+65. O(ClC(//OH))
+66. C(O(Cl)O(H)//O)
+67. O*(O(C(O(Cl)C(O(H)//O)Cl)))
+68. O*(C(ClClCl))
+69. O*(C(O(H)HH))
+70. O*(O(C(C(ClClH)O(Cl)Cl)))
+71. O*(O(C(ClClO(H))))
+72. O*(C(C(O(H)//O)ClCl))
+73. O*(O(C(O(Cl)ClO(H))))
+74. O*(C(O(Cl)C(O(H)//O)Cl))
+75. C(//OHH)
+76. O*(C(C(ClClH)O(Cl)Cl))
+77. C*(O(H)//O)
+78. C(C(Cl//O)O(H)//O)
+79. C(C(ClClH)O(Cl)//O)
+80. O*(O(C(O(H)//O)))
+81. C*(C(O(Cl)//O)ClCl)
+82. O*(O(C(C(O(Cl)//O)ClCl)))
+83. O*(C(C(O(Cl)//O)ClCl))
+84. C*(O(Cl)//O)
+85. C(C(Cl//O)O(Cl)//O)
+86. O*(O(C(O(Cl)//O)))
+87. C(O(Cl)//OC(O(H)//O))
+88. O*(C(O(Cl)//O))
+89. O*(C(C(O(Cl)//O)//O))
+90. OH-
+91. O-*
+92. ClOH-*
+93. H+
+94. Cl(Cl)
+95. HClOH
+96. Cl2O2
+97. ClO2-
+98. ClO2*
+99. ClO3-
+100. C*(//C(ClH)Cl)
+101. O*(O(C(//C(ClH)Cl)))
+102. O*(C(//C(ClH)Cl))
+103. C*(C(Cl//O)ClH)
+104. O*(O(C(C(Cl//O)ClH)))
+105. O*(C(C(Cl//O)ClH))
+106. C(//C(ClH)//O)
+107. C(C(ClHH)O(H)//O)
+108. C(C(ClClH)ClO(H)H)
+109. C(Cl#C(H))
+110. C(ClC(HHH)//O)
+111. C(//OC(HHH)O(H))
+112. C(C(ClClH)ClClO(H))
+The following is the reactino list
+1. C(ClCl//C(ClH)) + O*(H) = C*(C(ClO(H)H)ClCl) [DA]
+2. C(ClCl//C(ClH)) + Cl* = C*(C(ClClH)ClCl) [DA]
+3. C(ClCl//C(ClH)) + O*(Cl) = C*(C(O(Cl)ClH)ClCl) [DA]
+4. C(ClCl//C(ClH)) + Cl-*(Cl) = C*(C(ClClH)ClCl)+ Cl- [DA]
+5. C*(C(ClO(H)H)ClCl) = C*(ClClC(//OH)) + HCl [XE]
+6. C*(C(ClClH)ClCl) + O(//O) = O*(O(C(C(ClClH)ClCl))) [OA]
+7. C*(C(O(Cl)ClH)ClCl) + O(//O) = O*(O(C(C(O(Cl)ClH)ClCl))) [OA]
+8. C*(ClClC(//OH)) + O(//O) = O*(O(C(ClClC(//OH)))) [OA]
+9. 2*O*(O(C(C(ClClH)ClCl))) = O*(C(C(ClClH)ClCl)) *2 + O2 [PB3]
+10. 2*O*(O(C(C(O(Cl)ClH)ClCl))) = O*(C(C(O(Cl)ClH)ClCl)) *2 + O2 [PB3]
+11. 2*O*(O(C(ClClC(//OH)))) = O*(C(ClClC(//OH))) *2 + O2 [PB3]
+12. C(ClCl//O) + H2O = CO2 + 2HCl [S]
+13. O*(C(C(ClClH)ClCl)) = C(ClCl//O) + C*(ClClH) [BS]
+14. O*(C(C(ClClH)ClCl)) = C(ClClHC(Cl//O)) + Cl* [BS]
+15. O*(C(C(O(Cl)ClH)ClCl)) = C(ClCl//O) + C*(O(Cl)ClH) [BS]
+16. O*(C(C(O(Cl)ClH)ClCl)) = C(C(Cl//O)O(Cl)ClH) + Cl* [BS]
+17. O*(C(ClClC(//OH))) = C(Cl//OC(//OH)) + Cl* [BS]
+18. O*(C(ClClC(//OH))) = C(ClCl//O) + C*(//OH) [BS]
+19. C*(ClClH) + Cl* = C(ClClClH) [XR]
+20. C*(ClClH) + Cl-*(Cl) = C(ClClClH) +Cl- [XR]
+21. C*(ClClH) + O(//O) = O*(O(C(ClClH))) [OA]
+22. C(ClClHC(Cl//O)) + H2O = C(C(ClClH)O(H)//O) + HCl [HX]
+23. C*(O(Cl)ClH) + O(//O) = O*(O(C(O(Cl)ClH))) [OA]
+24. C(C(Cl//O)O(Cl)ClH) + H2O = C(O(Cl)ClHC(O(H)//O)) + HCl [HX]
+25. C(C(//OH)O(H)//O) + H2O2 = HCOOH + CO2 + H2O [S]
+26. C(//OHO(H)) + O*H = *COO- + H+ + H2O [S]
+27. *COO- + O2 + H+ = CO2 + HO2* [S]
+28. *COO- + H2O2 = CO2 + H2O + HO* [S]
+29. C(Cl//OC(//OH)) + H2O = C(C(//OH)O(H)//O) + HCl [HX]
+30. C*(//OH) + H2O = C*(O(H)O(H)H) [HC]
+31. C(ClClClH) + O*(H) = C*(ClClCl) + O(HH) [HA]
+32. C(ClClClH) + C*(C(ClClH)ClCl) = C*(ClClCl) + C(ClClHC(ClClH)) [HA]
+33. C(ClClClH) + C*(C(O(Cl)ClH)ClCl) = C*(ClClCl) + C(C(ClClH)O(Cl)ClH) [HA]
+34. C(ClClClH) + C*(ClClC(//OH)) = C*(ClClCl) + C(ClClHC(//OH)) [HA]
+35. C(ClClClH) + C*(ClClH) = C*(ClClCl) + C(ClClHH) [HA]
+36. C(ClClClH) + C*(O(Cl)ClH) = C*(ClClCl) + O(ClC(ClHH)) [HA]
+37. C(ClClClH) + Cl* = C*(ClClCl) + Cl(H) [HA]
+38. C(ClClClH) + O*(Cl) = C*(ClClCl) + O(ClH) [HA]
+39. C(ClClClH) + Cl-*(Cl) = C*(ClClCl) + Cl- + Cl(H) [HA]
+40. 2*O*(O(C(ClClH))) = O*(C(ClClH)) *2 + O2 [PB3]
+41. 2*O*(O(C(ClClH))) = C(ClCl//O) *2 + H2O2 [PB2]
+42. 2*O*(O(C(ClClH))) = C(ClCl//O) + C(ClClHO(H)) + O2 [PB1]
+43. C(C(ClClH)O(H)//O) + O*(H) = C*(C(O(H)//O)ClCl) + O(HH) [HA]
+44. C(C(ClClH)O(H)//O) + O*(H) = O*(C(C(ClClH)//O)) + O(HH) [HA]
+45. C(C(ClClH)O(H)//O) + C*(C(ClClH)ClCl) = C*(C(O(H)//O)ClCl) + C(ClClHC(ClClH)) [HA]
+46. C(C(ClClH)O(H)//O) + C*(C(ClClH)ClCl) = O*(C(C(ClClH)//O)) + C(ClClHC(ClClH)) [HA]
+47. C(C(ClClH)O(H)//O) + C*(C(O(Cl)ClH)ClCl) = C*(C(O(H)//O)ClCl) + C(C(ClClH)O(Cl)ClH) [HA]
+48. C(C(ClClH)O(H)//O) + C*(C(O(Cl)ClH)ClCl) = O*(C(C(ClClH)//O)) + C(C(ClClH)O(Cl)ClH) [HA]
+49. C(C(ClClH)O(H)//O) + C*(ClClC(//OH)) = C*(C(O(H)//O)ClCl) + C(ClClHC(//OH)) [HA]
+50. C(C(ClClH)O(H)//O) + C*(ClClC(//OH)) = O*(C(C(ClClH)//O)) + C(ClClHC(//OH)) [HA]
+51. C(C(ClClH)O(H)//O) + C*(ClClH) = C*(C(O(H)//O)ClCl) + C(ClClHH) [HA]
+52. C(C(ClClH)O(H)//O) + C*(ClClH) = O*(C(C(ClClH)//O)) + C(ClClHH) [HA]
+53. C(C(ClClH)O(H)//O) + C*(O(Cl)ClH) = C*(C(O(H)//O)ClCl) + O(ClC(ClHH)) [HA]
+54. C(C(ClClH)O(H)//O) + C*(O(Cl)ClH) = O*(C(C(ClClH)//O)) + O(ClC(ClHH)) [HA]
+55. C(C(ClClH)O(H)//O) + Cl* = C*(C(O(H)//O)ClCl) + Cl(H) [HA]
+56. C(C(ClClH)O(H)//O) + Cl* = O*(C(C(ClClH)//O)) + Cl(H) [HA]
+57. C(C(ClClH)O(H)//O) + O*(Cl) = C*(C(O(H)//O)ClCl) + O(ClH) [HA]
+58. C(C(ClClH)O(H)//O) + O*(Cl) = O*(C(C(ClClH)//O)) + O(ClH) [HA]
+59. C(C(ClClH)O(H)//O) + Cl-*(Cl) = C*(C(O(H)//O)ClCl) + Cl- + Cl(H) [HA]
+60. C(C(ClClH)O(H)//O) + Cl-*(Cl) = O*(C(C(ClClH)//O)) + Cl- + Cl(H) [HA]
+61. 2*O*(O(C(O(Cl)ClH))) = O*(C(O(Cl)ClH)) *2 + O2 [PB3]
+62. 2*O*(O(C(O(Cl)ClH))) = C(Cl//OO(Cl)) *2 + H2O2 [PB2]
+63. 2*O*(O(C(O(Cl)ClH))) = C(Cl//OO(Cl)) + C(O(Cl)ClO(H)H) + O2 [PB1]
+64. C(O(Cl)ClHC(O(H)//O)) + O*(H) = C*(O(Cl)C(O(H)//O)Cl) + O(HH) [HA]
+65. C(O(Cl)ClHC(O(H)//O)) + O*(H) = O*(C(C(O(Cl)ClH)//O)) + O(HH) [HA]
+66. C(O(Cl)ClHC(O(H)//O)) + C*(C(ClClH)ClCl) = C*(O(Cl)C(O(H)//O)Cl) + C(ClClHC(ClClH)) [HA]
+67. C(O(Cl)ClHC(O(H)//O)) + C*(C(ClClH)ClCl) = O*(C(C(O(Cl)ClH)//O)) + C(ClClHC(ClClH)) [HA]
+68. C(O(Cl)ClHC(O(H)//O)) + C*(C(O(Cl)ClH)ClCl) = C*(O(Cl)C(O(H)//O)Cl) + C(C(ClClH)O(Cl)ClH) [HA]
+69. C(O(Cl)ClHC(O(H)//O)) + C*(C(O(Cl)ClH)ClCl) = O*(C(C(O(Cl)ClH)//O)) + C(C(ClClH)O(Cl)ClH) [HA]
+70. C(O(Cl)ClHC(O(H)//O)) + C*(ClClC(//OH)) = C*(O(Cl)C(O(H)//O)Cl) + C(ClClHC(//OH)) [HA]
+71. C(O(Cl)ClHC(O(H)//O)) + C*(ClClC(//OH)) = O*(C(C(O(Cl)ClH)//O)) + C(ClClHC(//OH)) [HA]
+72. C(O(Cl)ClHC(O(H)//O)) + C*(ClClH) = C*(O(Cl)C(O(H)//O)Cl) + C(ClClHH) [HA]
+73. C(O(Cl)ClHC(O(H)//O)) + C*(ClClH) = O*(C(C(O(Cl)ClH)//O)) + C(ClClHH) [HA]
+74. C(O(Cl)ClHC(O(H)//O)) + C*(O(Cl)ClH) = C*(O(Cl)C(O(H)//O)Cl) + O(ClC(ClHH)) [HA]
+75. C(O(Cl)ClHC(O(H)//O)) + C*(O(Cl)ClH) = O*(C(C(O(Cl)ClH)//O)) + O(ClC(ClHH)) [HA]
+76. C(O(Cl)ClHC(O(H)//O)) + Cl* = C*(O(Cl)C(O(H)//O)Cl) + Cl(H) [HA]
+77. C(O(Cl)ClHC(O(H)//O)) + Cl* = O*(C(C(O(Cl)ClH)//O)) + Cl(H) [HA]
+78. C(O(Cl)ClHC(O(H)//O)) + O*(Cl) = C*(O(Cl)C(O(H)//O)Cl) + O(ClH) [HA]
+79. C(O(Cl)ClHC(O(H)//O)) + O*(Cl) = O*(C(C(O(Cl)ClH)//O)) + O(ClH) [HA]
+80. C(O(Cl)ClHC(O(H)//O)) + Cl-*(Cl) = C*(O(Cl)C(O(H)//O)Cl) + Cl- + Cl(H) [HA]
+81. C(O(Cl)ClHC(O(H)//O)) + Cl-*(Cl) = O*(C(C(O(Cl)ClH)//O)) + Cl- + Cl(H) [HA]
+82. C(O(H)//OC(O(H)//O)) + O*H = CO2 + *COO- + H2O + H+ [S]
+83. C(C(//OH)O(H)//O) + H2O = C(O(H)//OC(O(H)//O)) [HC]
+84. C*(O(H)O(H)H) + O(//O) = O*(O(C(O(H)O(H)H))) [OA]
+85. C*(ClClCl) + O(//O) = O*(O(C(ClClCl))) [OA]
+86. C(ClClHC(ClClH)) + O*(H) = C*(C(ClClH)ClCl) + O(HH) [HA]
+87. C(ClClHC(ClClH)) + C*(C(O(Cl)ClH)ClCl) = C*(C(ClClH)ClCl) + C(C(ClClH)O(Cl)ClH) [HA]
+88. C(ClClHC(ClClH)) + C*(ClClC(//OH)) = C*(C(ClClH)ClCl) + C(ClClHC(//OH)) [HA]
+89. C(ClClHC(ClClH)) + C*(ClClH) = C*(C(ClClH)ClCl) + C(ClClHH) [HA]
+90. C(ClClHC(ClClH)) + C*(O(Cl)ClH) = C*(C(ClClH)ClCl) + O(ClC(ClHH)) [HA]
+91. C(ClClHC(ClClH)) + C*(O(H)O(H)H) = C*(C(ClClH)ClCl) + C(O(H)O(H)HH) [HA]
+92. C(ClClHC(ClClH)) + C*(ClClCl) = C*(C(ClClH)ClCl) + C(ClClClH) [HA]
+93. C(ClClHC(ClClH)) + Cl* = C*(C(ClClH)ClCl) + Cl(H) [HA]
+94. C(ClClHC(ClClH)) + O*(Cl) = C*(C(ClClH)ClCl) + O(ClH) [HA]
+95. C(ClClHC(ClClH)) + Cl-*(Cl) = C*(C(ClClH)ClCl) + Cl- + Cl(H) [HA]
+96. C(C(ClClH)O(Cl)ClH) + O*(H) = C*(C(ClClH)O(Cl)Cl) + O(HH) [HA]
+97. C(C(ClClH)O(Cl)ClH) + O*(H) = C*(C(O(Cl)ClH)ClCl) + O(HH) [HA]
+98. C(C(ClClH)O(Cl)ClH) + C*(C(ClClH)ClCl) = C*(C(ClClH)O(Cl)Cl) + C(ClClHC(ClClH)) [HA]
+99. C(C(ClClH)O(Cl)ClH) + C*(C(ClClH)ClCl) = C*(C(O(Cl)ClH)ClCl) + C(ClClHC(ClClH)) [HA]
+100. C(C(ClClH)O(Cl)ClH) + C*(ClClC(//OH)) = C*(C(ClClH)O(Cl)Cl) + C(ClClHC(//OH)) [HA]
+101. C(C(ClClH)O(Cl)ClH) + C*(ClClC(//OH)) = C*(C(O(Cl)ClH)ClCl) + C(ClClHC(//OH)) [HA]
+102. C(C(ClClH)O(Cl)ClH) + C*(ClClH) = C*(C(ClClH)O(Cl)Cl) + C(ClClHH) [HA]
+103. C(C(ClClH)O(Cl)ClH) + C*(ClClH) = C*(C(O(Cl)ClH)ClCl) + C(ClClHH) [HA]
+104. C(C(ClClH)O(Cl)ClH) + C*(O(Cl)ClH) = C*(C(ClClH)O(Cl)Cl) + O(ClC(ClHH)) [HA]
+105. C(C(ClClH)O(Cl)ClH) + C*(O(Cl)ClH) = C*(C(O(Cl)ClH)ClCl) + O(ClC(ClHH)) [HA]
+106. C(C(ClClH)O(Cl)ClH) + C*(O(H)O(H)H) = C*(C(ClClH)O(Cl)Cl) + C(O(H)O(H)HH) [HA]
+107. C(C(ClClH)O(Cl)ClH) + C*(O(H)O(H)H) = C*(C(O(Cl)ClH)ClCl) + C(O(H)O(H)HH) [HA]
+108. C(C(ClClH)O(Cl)ClH) + C*(ClClCl) = C*(C(ClClH)O(Cl)Cl) + C(ClClClH) [HA]
+109. C(C(ClClH)O(Cl)ClH) + C*(ClClCl) = C*(C(O(Cl)ClH)ClCl) + C(ClClClH) [HA]
+110. C(C(ClClH)O(Cl)ClH) + Cl* = C*(C(ClClH)O(Cl)Cl) + Cl(H) [HA]
+111. C(C(ClClH)O(Cl)ClH) + Cl* = C*(C(O(Cl)ClH)ClCl) + Cl(H) [HA]
+112. C(C(ClClH)O(Cl)ClH) + O*(Cl) = C*(C(ClClH)O(Cl)Cl) + O(ClH) [HA]
+113. C(C(ClClH)O(Cl)ClH) + O*(Cl) = C*(C(O(Cl)ClH)ClCl) + O(ClH) [HA]
+114. C(C(ClClH)O(Cl)ClH) + Cl-*(Cl) = C*(C(ClClH)O(Cl)Cl) + Cl- + Cl(H) [HA]
+115. C(C(ClClH)O(Cl)ClH) + Cl-*(Cl) = C*(C(O(Cl)ClH)ClCl) + Cl- + Cl(H) [HA]
+116. C(ClClHC(//OH)) + H2O = C(C(ClClH)O(H)//O) [HC]
+117. C(ClClHH) + O*(H) = C*(ClClH) + O(HH) [HA]
+118. C(ClClHH) + C*(C(ClClH)ClCl) = C*(ClClH) + C(ClClHC(ClClH)) [HA]
+119. C(ClClHH) + C*(C(O(Cl)ClH)ClCl) = C*(ClClH) + C(C(ClClH)O(Cl)ClH) [HA]
+120. C(ClClHH) + C*(ClClC(//OH)) = C*(ClClH) + C(ClClHC(//OH)) [HA]
+121. C(ClClHH) + C*(O(Cl)ClH) = C*(ClClH) + O(ClC(ClHH)) [HA]
+122. C(ClClHH) + C*(O(H)O(H)H) = C*(ClClH) + C(O(H)O(H)HH) [HA]
+123. C(ClClHH) + C*(ClClCl) = C*(ClClH) + C(ClClClH) [HA]
+124. C(ClClHH) + Cl* = C*(ClClH) + Cl(H) [HA]
+125. C(ClClHH) + O*(Cl) = C*(ClClH) + O(ClH) [HA]
+126. C(ClClHH) + Cl-*(Cl) = C*(ClClH) + Cl- + Cl(H) [HA]
+127. O(ClC(ClHH)) + O*(H) = C*(O(Cl)ClH) + O(HH) [HA]
+128. O(ClC(ClHH)) + C*(C(ClClH)ClCl) = C*(O(Cl)ClH) + C(ClClHC(ClClH)) [HA]
+129. O(ClC(ClHH)) + C*(C(O(Cl)ClH)ClCl) = C*(O(Cl)ClH) + C(C(ClClH)O(Cl)ClH) [HA]
+130. O(ClC(ClHH)) + C*(ClClC(//OH)) = C*(O(Cl)ClH) + C(ClClHC(//OH)) [HA]
+131. O(ClC(ClHH)) + C*(ClClH) = C*(O(Cl)ClH) + C(ClClHH) [HA]
+132. O(ClC(ClHH)) + C*(O(H)O(H)H) = C*(O(Cl)ClH) + C(O(H)O(H)HH) [HA]
+133. O(ClC(ClHH)) + C*(ClClCl) = C*(O(Cl)ClH) + C(ClClClH) [HA]
+134. O(ClC(ClHH)) + Cl* = C*(O(Cl)ClH) + Cl(H) [HA]
+135. O(ClC(ClHH)) + O*(Cl) = C*(O(Cl)ClH) + O(ClH) [HA]
+136. O(ClC(ClHH)) + Cl-*(Cl) = C*(O(Cl)ClH) + Cl- + Cl(H) [HA]
+137. O*(C(ClClH)) = C*(ClClO(H)) [OT]
+138. C(Cl//OH) = HCl + CO [S]
+139. O*(C(ClClH)) = C(Cl//OH) + Cl* [BS]
+140. C(ClClHO(H)) = C(Cl//OH) + HCl [XE]
+141. C*(C(O(H)//O)ClCl) + O(//O) = O*(O(C(C(O(H)//O)ClCl))) [OA]
+142. O*(C(C(ClClH)//O)) = C(//O//O) + C*(ClClH) [BS]
+143. O*(C(O(Cl)ClH)) = C*(O(Cl)ClO(H)) [OT]
+144. O*(C(O(Cl)ClH)) = C(Cl//OH) + O*(Cl) [BS]
+145. O*(C(O(Cl)ClH)) = O(ClC(//OH)) + Cl* [BS]
+146. C(O(Cl)O(H)//O) = CO2 + HOCl [S]
+147. C(Cl//OO(Cl)) + H2O = C(O(Cl)O(H)//O) + HCl [HX]
+148. C(O(Cl)ClO(H)H) = O(ClC(//OH)) + HCl [XE]
+149. C*(O(Cl)C(O(H)//O)Cl) + O(//O) = O*(O(C(O(Cl)C(O(H)//O)Cl))) [OA]
+150. O*(C(C(O(Cl)ClH)//O)) = C(//O//O) + C*(O(Cl)ClH) [BS]
+151. O*(O(C(O(H)O(H)H))) = C(//OHO(H))+ *OOH [PH]
+152. 2*O*(O(C(ClClCl))) = O*(C(ClClCl)) *2 + O2 [PB3]
+153. C(O(H)O(H)HH) + O*(H) = C*(O(H)O(H)H) + O(HH) [HA]
+154. C(O(H)O(H)HH) + O*(H) = O*(C(O(H)HH)) + O(HH) [HA]
+155. C(O(H)O(H)HH) + C*(C(ClClH)ClCl) = C*(O(H)O(H)H) + C(ClClHC(ClClH)) [HA]
+156. C(O(H)O(H)HH) + C*(C(ClClH)ClCl) = O*(C(O(H)HH)) + C(ClClHC(ClClH)) [HA]
+157. C(O(H)O(H)HH) + C*(C(O(Cl)ClH)ClCl) = C*(O(H)O(H)H) + C(C(ClClH)O(Cl)ClH) [HA]
+158. C(O(H)O(H)HH) + C*(C(O(Cl)ClH)ClCl) = O*(C(O(H)HH)) + C(C(ClClH)O(Cl)ClH) [HA]
+159. C(O(H)O(H)HH) + C*(ClClC(//OH)) = C*(O(H)O(H)H) + C(ClClHC(//OH)) [HA]
+160. C(O(H)O(H)HH) + C*(ClClC(//OH)) = O*(C(O(H)HH)) + C(ClClHC(//OH)) [HA]
+161. C(O(H)O(H)HH) + C*(ClClH) = C*(O(H)O(H)H) + C(ClClHH) [HA]
+162. C(O(H)O(H)HH) + C*(ClClH) = O*(C(O(H)HH)) + C(ClClHH) [HA]
+163. C(O(H)O(H)HH) + C*(O(Cl)ClH) = C*(O(H)O(H)H) + O(ClC(ClHH)) [HA]
+164. C(O(H)O(H)HH) + C*(O(Cl)ClH) = O*(C(O(H)HH)) + O(ClC(ClHH)) [HA]
+165. C(O(H)O(H)HH) + C*(ClClCl) = C*(O(H)O(H)H) + C(ClClClH) [HA]
+166. C(O(H)O(H)HH) + C*(ClClCl) = O*(C(O(H)HH)) + C(ClClClH) [HA]
+167. C(O(H)O(H)HH) + C*(C(O(H)//O)ClCl) = C*(O(H)O(H)H) + C(C(ClClH)O(H)//O) [HA]
+168. C(O(H)O(H)HH) + C*(C(O(H)//O)ClCl) = O*(C(O(H)HH)) + C(C(ClClH)O(H)//O) [HA]
+169. C(O(H)O(H)HH) + C*(O(Cl)C(O(H)//O)Cl) = C*(O(H)O(H)H) + C(O(Cl)ClHC(O(H)//O)) [HA]
+170. C(O(H)O(H)HH) + C*(O(Cl)C(O(H)//O)Cl) = O*(C(O(H)HH)) + C(O(Cl)ClHC(O(H)//O)) [HA]
+171. C(O(H)O(H)HH) + Cl* = C*(O(H)O(H)H) + Cl(H) [HA]
+172. C(O(H)O(H)HH) + Cl* = O*(C(O(H)HH)) + Cl(H) [HA]
+173. C(O(H)O(H)HH) + O*(Cl) = C*(O(H)O(H)H) + O(ClH) [HA]
+174. C(O(H)O(H)HH) + O*(Cl) = O*(C(O(H)HH)) + O(ClH) [HA]
+175. C(O(H)O(H)HH) + Cl-*(Cl) = C*(O(H)O(H)H) + Cl- + Cl(H) [HA]
+176. C(O(H)O(H)HH) + Cl-*(Cl) = O*(C(O(H)HH)) + Cl- + Cl(H) [HA]
+177. C*(C(ClClH)O(Cl)Cl) + O(//O) = O*(O(C(C(ClClH)O(Cl)Cl))) [OA]
+178. C*(ClClO(H)) + O(//O) = O*(O(C(ClClO(H)))) [OA]
+179. 2*O*(O(C(C(O(H)//O)ClCl))) = O*(C(C(O(H)//O)ClCl)) *2 + O2 [PB3]
+180. C*(O(Cl)ClO(H)) + O(//O) = O*(O(C(O(Cl)ClO(H)))) [OA]
+181. O(ClC(//OH)) + H2O = C(O(Cl)O(H)//O) [HC]
+182. 2*O*(O(C(O(Cl)C(O(H)//O)Cl))) = O*(C(O(Cl)C(O(H)//O)Cl)) *2 + O2 [PB3]
+183. O*(C(ClClCl)) = C(ClCl//O) + Cl* [BS]
+184. O*(C(O(H)HH)) = C(//OHH) + O*(H) [BS]
+185. 2*O*(O(C(C(ClClH)O(Cl)Cl))) = O*(C(C(ClClH)O(Cl)Cl)) *2 + O2 [PB3]
+186. O*(O(C(ClClO(H)))) = C(ClCl//O)+ *OOH [PH]
+187. O*(C(C(O(H)//O)ClCl)) = C(ClCl//O) + C*(O(H)//O) [BS]
+188. O*(C(C(O(H)//O)ClCl)) = C(C(Cl//O)O(H)//O) + Cl* [BS]
+189. O*(O(C(O(Cl)ClO(H)))) = C(Cl//OO(Cl))+ *OOH [PH]
+190. O*(C(O(Cl)C(O(H)//O)Cl)) = C(C(Cl//O)O(H)//O) + O*(Cl) [BS]
+191. O*(C(O(Cl)C(O(H)//O)Cl)) = C(Cl//OO(Cl)) + C*(O(H)//O) [BS]
+192. C(//OHH) + H2O = C(//OHO(H)) [HC]
+193. O*(C(C(ClClH)O(Cl)Cl)) = C(Cl//OO(Cl)) + C*(ClClH) [BS]
+194. O*(C(C(ClClH)O(Cl)Cl)) = C(ClClHC(Cl//O)) + O*(Cl) [BS]
+195. O*(C(C(ClClH)O(Cl)Cl)) = C(C(ClClH)O(Cl)//O) + Cl* [BS]
+196. C*(O(H)//O) + O(//O) = O*(O(C(O(H)//O))) [OA]
+197. C(C(Cl//O)O(H)//O) + H2O = C(O(H)//OC(O(H)//O)) + HCl [HX]
+198. C(C(ClClH)O(Cl)//O) + O*(H) = C*(C(O(Cl)//O)ClCl) + O(HH) [HA]
+199. C(C(ClClH)O(Cl)//O) + C*(C(ClClH)ClCl) = C*(C(O(Cl)//O)ClCl) + C(ClClHC(ClClH)) [HA]
+200. C(C(ClClH)O(Cl)//O) + C*(C(O(Cl)ClH)ClCl) = C*(C(O(Cl)//O)ClCl) + C(C(ClClH)O(Cl)ClH) [HA]
+201. C(C(ClClH)O(Cl)//O) + C*(ClClC(//OH)) = C*(C(O(Cl)//O)ClCl) + C(ClClHC(//OH)) [HA]
+202. C(C(ClClH)O(Cl)//O) + C*(ClClH) = C*(C(O(Cl)//O)ClCl) + C(ClClHH) [HA]
+203. C(C(ClClH)O(Cl)//O) + C*(O(Cl)ClH) = C*(C(O(Cl)//O)ClCl) + O(ClC(ClHH)) [HA]
+204. C(C(ClClH)O(Cl)//O) + C*(O(H)O(H)H) = C*(C(O(Cl)//O)ClCl) + C(O(H)O(H)HH) [HA]
+205. C(C(ClClH)O(Cl)//O) + C*(ClClCl) = C*(C(O(Cl)//O)ClCl) + C(ClClClH) [HA]
+206. C(C(ClClH)O(Cl)//O) + C*(C(O(H)//O)ClCl) = C*(C(O(Cl)//O)ClCl) + C(C(ClClH)O(H)//O) [HA]
+207. C(C(ClClH)O(Cl)//O) + C*(O(Cl)C(O(H)//O)Cl) = C*(C(O(Cl)//O)ClCl) + C(O(Cl)ClHC(O(H)//O)) [HA]
+208. C(C(ClClH)O(Cl)//O) + C*(C(ClClH)O(Cl)Cl) = C*(C(O(Cl)//O)ClCl) + C(C(ClClH)O(Cl)ClH) [HA]
+209. C(C(ClClH)O(Cl)//O) + C*(ClClO(H)) = C*(C(O(Cl)//O)ClCl) + C(ClClHO(H)) [HA]
+210. C(C(ClClH)O(Cl)//O) + C*(O(Cl)ClO(H)) = C*(C(O(Cl)//O)ClCl) + C(O(Cl)ClO(H)H) [HA]
+211. C(C(ClClH)O(Cl)//O) + C*(O(H)//O) = C*(C(O(Cl)//O)ClCl) + C(//OHO(H)) [HA]
+212. C(C(ClClH)O(Cl)//O) + Cl* = C*(C(O(Cl)//O)ClCl) + Cl(H) [HA]
+213. C(C(ClClH)O(Cl)//O) + O*(Cl) = C*(C(O(Cl)//O)ClCl) + O(ClH) [HA]
+214. C(C(ClClH)O(Cl)//O) + Cl-*(Cl) = C*(C(O(Cl)//O)ClCl) + Cl- + Cl(H) [HA]
+215. O*(O(C(O(H)//O))) = C(//O//O)+ *OOH [PH]
+216. C*(C(O(Cl)//O)ClCl) + O(//O) = O*(O(C(C(O(Cl)//O)ClCl))) [OA]
+217. 2*O*(O(C(C(O(Cl)//O)ClCl))) = O*(C(C(O(Cl)//O)ClCl)) *2 + O2 [PB3]
+218. O*(C(C(O(Cl)//O)ClCl)) = C(ClCl//O) + C*(O(Cl)//O) [BS]
+219. O*(C(C(O(Cl)//O)ClCl)) = C(C(Cl//O)O(Cl)//O) + Cl* [BS]
+220. C*(O(Cl)//O) + O(//O) = O*(O(C(O(Cl)//O))) [OA]
+221. C(C(Cl//O)O(Cl)//O) + H2O = C(O(Cl)//OC(O(H)//O)) + HCl [HX]
+222. 2*O*(O(C(O(Cl)//O))) = O*(C(O(Cl)//O)) *2 + O2 [PB3]
+223. C(O(Cl)//OC(O(H)//O)) + O*(H) = O*(C(C(O(Cl)//O)//O)) + O(HH) [HA]
+224. C(O(Cl)//OC(O(H)//O)) + C*(C(ClClH)ClCl) = O*(C(C(O(Cl)//O)//O)) + C(ClClHC(ClClH)) [HA]
+225. C(O(Cl)//OC(O(H)//O)) + C*(C(O(Cl)ClH)ClCl) = O*(C(C(O(Cl)//O)//O)) + C(C(ClClH)O(Cl)ClH) [HA]
+226. C(O(Cl)//OC(O(H)//O)) + C*(ClClC(//OH)) = O*(C(C(O(Cl)//O)//O)) + C(ClClHC(//OH)) [HA]
+227. C(O(Cl)//OC(O(H)//O)) + C*(ClClH) = O*(C(C(O(Cl)//O)//O)) + C(ClClHH) [HA]
+228. C(O(Cl)//OC(O(H)//O)) + C*(O(Cl)ClH) = O*(C(C(O(Cl)//O)//O)) + O(ClC(ClHH)) [HA]
+229. C(O(Cl)//OC(O(H)//O)) + C*(O(H)O(H)H) = O*(C(C(O(Cl)//O)//O)) + C(O(H)O(H)HH) [HA]
+230. C(O(Cl)//OC(O(H)//O)) + C*(ClClCl) = O*(C(C(O(Cl)//O)//O)) + C(ClClClH) [HA]
+231. C(O(Cl)//OC(O(H)//O)) + C*(C(O(H)//O)ClCl) = O*(C(C(O(Cl)//O)//O)) + C(C(ClClH)O(H)//O) [HA]
+232. C(O(Cl)//OC(O(H)//O)) + C*(O(Cl)C(O(H)//O)Cl) = O*(C(C(O(Cl)//O)//O)) + C(O(Cl)ClHC(O(H)//O)) [HA]
+233. C(O(Cl)//OC(O(H)//O)) + C*(C(ClClH)O(Cl)Cl) = O*(C(C(O(Cl)//O)//O)) + C(C(ClClH)O(Cl)ClH) [HA]
+234. C(O(Cl)//OC(O(H)//O)) + C*(ClClO(H)) = O*(C(C(O(Cl)//O)//O)) + C(ClClHO(H)) [HA]
+235. C(O(Cl)//OC(O(H)//O)) + C*(O(Cl)ClO(H)) = O*(C(C(O(Cl)//O)//O)) + C(O(Cl)ClO(H)H) [HA]
+236. C(O(Cl)//OC(O(H)//O)) + C*(O(H)//O) = O*(C(C(O(Cl)//O)//O)) + C(//OHO(H)) [HA]
+237. C(O(Cl)//OC(O(H)//O)) + C*(C(O(Cl)//O)ClCl) = O*(C(C(O(Cl)//O)//O)) + C(C(ClClH)O(Cl)//O) [HA]
+238. C(O(Cl)//OC(O(H)//O)) + C*(O(Cl)//O) = O*(C(C(O(Cl)//O)//O)) + O(ClC(//OH)) [HA]
+239. C(O(Cl)//OC(O(H)//O)) + Cl* = O*(C(C(O(Cl)//O)//O)) + Cl(H) [HA]
+240. C(O(Cl)//OC(O(H)//O)) + O*(Cl) = O*(C(C(O(Cl)//O)//O)) + O(ClH) [HA]
+241. C(O(Cl)//OC(O(H)//O)) + Cl-*(Cl) = O*(C(C(O(Cl)//O)//O)) + Cl- + Cl(H) [HA]
+242. O*(C(O(Cl)//O)) = C(//O//O) + O*(Cl) [BS]
+243. O*(C(C(O(Cl)//O)//O)) = C(//O//O) + C*(O(Cl)//O) [BS]
+244. O*(H) + OH- = O-* + H2O [S]
+245. O-* + H2O = O*(H) + OH- [S]
+246. O*(H) + O(ClH) = O*(Cl) + H2O [S]
+247. O*(H) + O*(H) = H2O2 [S]
+248. H2O2 + O*(H) = HO2* + H2O [S]
+249. O*(H) + HO2* = O(//O) + H2O [S]
+250. H2O2 + HO2* = O*(H) + O(//O) + H2O [S]
+251. HO2* + HO2* = H2O2 + O(//O) [S]
+252. Cl* + H2O = ClOH-* + H+ [S]
+253. ClOH-* + H+ = Cl* + H2O [S]
+254. ClOH-* = O*(H) + Cl- [S]
+255. O*(H) + Cl- = ClOH-* [S]
+256. ClOH-* + Cl- = Cl-*(Cl) + OH- [S]
+257. Cl* + Cl- = Cl-*(Cl) [S]
+258. Cl-*(Cl) = Cl* + Cl- [S]
+259. Cl* + Cl* = Cl(Cl) [S]
+260. Cl(Cl) + OH- = O(ClH) + Cl- [S]
+261. Cl-*(Cl) + Cl-*(Cl) = Cl(Cl) + 2Cl- [S]
+262. Cl* + Cl-*(Cl) = Cl(Cl) + Cl- [S]
+263. Cl-*(Cl) + H2O2 = HO2* + 2Cl- + H+ [S]
+264. Cl-*(Cl) + HO2* = O(//O) + 2Cl- + H+ [S]
+265. Cl-*(Cl) + H2O = HClOH + Cl- [S]
+266. Cl-*(Cl) + OH- = ClOH-* + Cl- [S]
+267. HClOH = ClOH-* + H+ [S]
+268. HClOH = Cl* + H2O [S]
+269. HClOH + Cl- = Cl-*(Cl) + H2O [S]
+270. Cl* + H2O2 = HO2* + Cl- + H+ [S]
+271. Cl-*(Cl) + O*(H) = O(ClH) + Cl- [S]
+272. Cl(Cl) + H2O = O(ClH) + Cl- + H+ [S]
+273. Cl(Cl) + HO2* = Cl-*(Cl) + O(//O) + H+ [S]
+274. O(ClH) + HO2* = Cl* + O(//O) + H2O [S]
+275. Cl* + O(ClH) = O*(Cl) + Cl- + H+ [S]
+276. Cl* + OH- = ClOH-* [S]
+277. O*(Cl) + O*(Cl) = Cl2O2 [S]
+278. Cl2O2 + H2O = O(ClH) + ClO2- + H+ [S]
+279. O*(Cl) + O*(H) = ClO2- + H+ [S]
+280. ClO2- + O*(H) = ClO2* + OH- [S]
+281. ClO2* + O*(H) = ClO3- + H+ [S]
+282. ClO2- + Cl-*(Cl) = ClO2* + 2Cl- [S]
+283. ClO2- + O*(Cl) + H+ = ClO2* + O(ClH) [S]
+284. C(ClCl//C(ClH)) + UV = C*(//C(ClH)Cl) + Cl* [UV]
+285. C*(//C(ClH)Cl) + O(//O) = O*(O(C(//C(ClH)Cl))) [OA]
+286. 2O*(O(C(//C(ClH)Cl)))  = O*(C(//C(ClH)Cl)) *2 + O(//O) [PB3]
+287. O*(C(//C(ClH)Cl)) = C*(C(Cl//O)ClH) [S]
+288. C*(C(Cl//O)ClH) + H2O + -> C(//OHO(H)) + H+ + Cl- [S]
+289. C*(C(Cl//O)ClH) + O(//O) = O*(O(C(C(Cl//O)ClH))) [OA]
+290. 2O*(O(C(C(Cl//O)ClH)))  = O*(C(C(Cl//O)ClH)) *2 + O(//O) [PB3]
+291. O*(C(C(Cl//O)ClH)) = C(Cl//OC(//OH)) + Cl* [ClE]
+292. C(Cl//OC(//OH)) + H2O + -> C(C(//OH)O(H)//O) + HCl [HS]
+293. O*(C(//C(ClH)Cl)) = C(//C(ClH)//O) + Cl* [ClE]
+294. C(//C(ClH)//O) + H2O = C(C(ClHH)O(H)//O) [HS]
+295. C(C(ClHH)O(H)//O) + O(ClH) + = C(C(ClClH)O(H)//O) + H2O [ClR]
+296. C(ClCl//C(ClH)) + UV + H2O = C(C(ClClH)ClO(H)H) [UV]
+297. C(C(ClClH)ClO(H)H) = C(ClClHC(//OH)) + HCl [XE]
+298. C(ClClHC(//OH)) + H2O -> C(C(ClClH)O(H)//O) [HC]
+299. C(ClClHC(//OH)) + uv -> C*(//OH) + C*(ClClH) [UV]
+300. C(ClCl//C(ClH)) + UV + H2O = C(Cl#C(H)) [UV]
+301. C(Cl#C(H)) + H2O -> C(ClC(HHH)//O) [HC]
+302. C(ClC(HHH)//O) + H2O -> C(//OC(HHH)O(H)) + HCl [HX]
+303. C(//OC(HHH)O(H)) + O(ClH) -> C(C(ClHH)O(H)//O) +H2O [ClR]
+304. C(ClCl//C(ClH)) + O(ClH) = C(C(ClClH)ClClO(H)) [ClR]
+305. C(C(ClClH)ClClO(H)) = C(ClClHC(Cl//O)) + HCl [XE]
+Total number of reactions is: 305
+Total number of species is: 112
+Running time of Pathway Generator: 6.319seconds
